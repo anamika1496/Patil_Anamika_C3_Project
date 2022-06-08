@@ -5,6 +5,8 @@ import org.mockito.Mockito;
 
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,6 +22,15 @@ class RestaurantTest {
         restaurant.addToMenu("Vegetable lasagne", 269);
 
     }
+    //>>>>>>>>>>>>>>>>>>>>>>>>>ORDERVALUE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void get_order_value_should_return_the_total_cost_of_the_items_selected(){
+        List<String> selectItems = Arrays.asList("Sweet corn soup");
+        int currentOrderValue = restaurant.getOrderValue(selectItems);
+        assertEquals(119, currentOrderValue);
+
+    }
+
 
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
